@@ -13,6 +13,7 @@
  * -    Los números impares SOLO PUEDEN TENER DIVISORES IMPARES
  */
 using System;
+using System.Diagnostics;
 
 namespace NúmerosPerfectos
 {
@@ -21,21 +22,23 @@ namespace NúmerosPerfectos
         static void Main(string[] args)
         {
             ulong indice;
-            ulong count;
+            ulong primerDivisor;
             Console.WriteLine("CALCULADORA DE NPUMEROS PERFECTOS. Precione Enter para comenzar a calcular");
             Console.ReadLine();
-
-                for (indice = 2; indice <= ulong.MaxValue; indice++)
+            Stopwatch tiempo = new Stopwatch();
+            tiempo.Start();
+            for (indice = 2; indice <= ulong.MaxValue; indice++)
                 {
-                count = 1;
-                for (ulong i = 2; i <= indice/2 ; i++)
-                {
-                    if (indice % i == 0)
-                        count += i;
+                
+                primerDivisor = 1;
+                for (ulong i = indice/2 ; i > 1 ; i--)
+                {   
+                    if (indice % i == 0) primerDivisor += i;
+                    if (primerDivisor> indice) break;
                 }
-                if (count == indice)
+                if (primerDivisor == indice)
                 {
-                    Console.WriteLine("Numero perfecto :" + indice);
+                    Console.WriteLine($"Numero perfecto : {indice}  | Tiempo demorado en minutos: {tiempo.Elapsed.TotalMinutes}");
                 }
             }
         }
