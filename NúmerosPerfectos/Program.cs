@@ -20,24 +20,24 @@ namespace NúmerosPerfectos
     {
         static void Main(string[] args)
         {
-            ulong candidatoPerfecto;
+            ulong indice;
+            ulong count;
             Console.WriteLine("CALCULADORA DE NPUMEROS PERFECTOS. Precione Enter para comenzar a calcular");
             Console.ReadLine();
-            int next = 1;
-            int i = 0;
-                int count = 0;
-                for (int j = 1; j < next; j++)
-                {
-                    if (next % j == 0)
-                        count = count + j;
-                }
 
-                if (count == next)
+                for (indice = 2; indice <= ulong.MaxValue; indice++)
                 {
-                    Console.WriteLine("Numero perfecto :" + next);
-                    i++;
+                count = 1;
+                for (ulong i = 2; i <= indice/2 ; i++)
+                {
+                    if (indice % i == 0)
+                        count += i;
                 }
-                next++;
+                if (count == indice)
+                {
+                    Console.WriteLine("Numero perfecto :" + indice);
+                }
+            }
         }
     }
 }
