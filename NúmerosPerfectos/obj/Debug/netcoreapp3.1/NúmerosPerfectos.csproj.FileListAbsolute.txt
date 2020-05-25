@@ -1,0 +1,13 @@
+C:\Developer\Proyectos y prácticas\practicas\C#\NúmerosPerfectos\NúmerosPerfectos\bin\Debug\netcoreapp3.1\NúmerosPerfectos.exe
+C:\Developer\Proyectos y prácticas\practicas\C#\NúmerosPerfectos\NúmerosPerfectos\bin\Debug\netcoreapp3.1\NúmerosPerfectos.deps.json
+C:\Developer\Proyectos y prácticas\practicas\C#\NúmerosPerfectos\NúmerosPerfectos\bin\Debug\netcoreapp3.1\NúmerosPerfectos.runtimeconfig.json
+C:\Developer\Proyectos y prácticas\practicas\C#\NúmerosPerfectos\NúmerosPerfectos\bin\Debug\netcoreapp3.1\NúmerosPerfectos.runtimeconfig.dev.json
+C:\Developer\Proyectos y prácticas\practicas\C#\NúmerosPerfectos\NúmerosPerfectos\bin\Debug\netcoreapp3.1\NúmerosPerfectos.dll
+C:\Developer\Proyectos y prácticas\practicas\C#\NúmerosPerfectos\NúmerosPerfectos\bin\Debug\netcoreapp3.1\NúmerosPerfectos.pdb
+C:\Developer\Proyectos y prácticas\practicas\C#\NúmerosPerfectos\NúmerosPerfectos\obj\Debug\netcoreapp3.1\NúmerosPerfectos.csprojAssemblyReference.cache
+C:\Developer\Proyectos y prácticas\practicas\C#\NúmerosPerfectos\NúmerosPerfectos\obj\Debug\netcoreapp3.1\NúmerosPerfectos.AssemblyInfoInputs.cache
+C:\Developer\Proyectos y prácticas\practicas\C#\NúmerosPerfectos\NúmerosPerfectos\obj\Debug\netcoreapp3.1\NúmerosPerfectos.AssemblyInfo.cs
+C:\Developer\Proyectos y prácticas\practicas\C#\NúmerosPerfectos\NúmerosPerfectos\obj\Debug\netcoreapp3.1\NúmerosPerfectos.csproj.CoreCompileInputs.cache
+C:\Developer\Proyectos y prácticas\practicas\C#\NúmerosPerfectos\NúmerosPerfectos\obj\Debug\netcoreapp3.1\NúmerosPerfectos.dll
+C:\Developer\Proyectos y prácticas\practicas\C#\NúmerosPerfectos\NúmerosPerfectos\obj\Debug\netcoreapp3.1\NúmerosPerfectos.pdb
+C:\Developer\Proyectos y prácticas\practicas\C#\NúmerosPerfectos\NúmerosPerfectos\obj\Debug\netcoreapp3.1\NúmerosPerfectos.genruntimeconfig.cache

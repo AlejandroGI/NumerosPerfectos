@@ -20,7 +20,24 @@ namespace NúmerosPerfectos
     {
         static void Main(string[] args)
         {
+            ulong indice;
+            ulong count;
+            Console.WriteLine("CALCULADORA DE NPUMEROS PERFECTOS. Precione Enter para comenzar a calcular");
+            Console.ReadLine();
 
+                for (indice = 2; indice <= ulong.MaxValue; indice++)
+                {
+                count = 1;
+                for (ulong i = 2; i <= indice/2 ; i++)
+                {
+                    if (indice % i == 0)
+                        count += i;
+                }
+                if (count == indice)
+                {
+                    Console.WriteLine("Numero perfecto :" + indice);
+                }
+            }
         }
     }
 }
