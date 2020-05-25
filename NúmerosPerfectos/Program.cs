@@ -11,7 +11,6 @@
  * -    Si la operación de suma de sus divisores se pasó del número, el número no es perfecto. Por lo que se puede comenzar la suma desde los últimos divisores
  * -    Si el cuociente de la división es un número entero, se obtienen dos divisores, el divisor y el cuociente (resultado como número entero de la división)
  * -    Los números impares SOLO PUEDEN TENER DIVISORES IMPARES
- * 
  */
 using System;
 
