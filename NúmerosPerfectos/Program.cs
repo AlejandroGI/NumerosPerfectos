@@ -63,13 +63,18 @@ namespace NúmerosPerfectos
         }
         public static bool calcularPrimos(ulong indice)
         {
+            bool resultado = true;
             //2, 3, 5, 7, 11
-            double raizIndice = Math.Sqrt(indice);
-            if (true)
+            if (indice == 2)                                       //2 es la única exepción de números pares primos
             {
+                resultado = false;
+            }
+            else
+            {
+                double raizIndice = Math.Sqrt(indice);
 
             }
-            return false;
+            return resultado;
         }
     }
 }
