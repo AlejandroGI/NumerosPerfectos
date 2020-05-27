@@ -22,8 +22,6 @@ namespace NúmerosPerfectos
         static void Main(string[] args)
         {
             {
-                //Thread calcularPrimos = new Thread(AcumuladorDePrimos);
-                //calcularPrimos.Start();
                 ulong indice;                                       //Intento de número perfecto.
                 ulong divisores;                                    //acumulador de divisores.
                 Console.WriteLine("calcuadora de números perfectos");
@@ -44,7 +42,6 @@ namespace NúmerosPerfectos
                     {
                         if (esPrimo(indice) == true)                //es primo
                         {
-                            Console.WriteLine($"es primo  {tiempo.Elapsed.TotalMinutes}");
                             divisores = divisores;
                         }
                         else                                        //no es primo
