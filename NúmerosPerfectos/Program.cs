@@ -14,6 +14,7 @@
  */
 using System;
 using System.Diagnostics;
+using System.Threading;
 
 namespace NúmerosPerfectos
 {
@@ -21,34 +22,37 @@ namespace NúmerosPerfectos
     {
         static void Main(string[] args)
         {
-            ulong indice;                                       //Número que se intenta saber si es perfecto
-            ulong divisores;                                    //acumulador de divisores
-            Console.WriteLine("CALCULADORA DE NPUMEROS PERFECTOS. Precione Enter para comenzar a calcular");
-            Console.ReadLine();
-            Stopwatch tiempo = new Stopwatch();
-            tiempo.Start();
-            for (indice = 2; indice <= ulong.MaxValue; indice++)//buble casi infino empieza del 2 hasta el máximo de ULong
+            {
+                ulong indice;                                       //Número que se intenta saber si es perfecto
+                ulong divisores;                                    //acumulador de divisores
+                Console.WriteLine("calcuadora de números perfectos");
+                Stopwatch tiempo = new Stopwatch();
+                tiempo.Start();
+                for (indice = 2; indice <= ulong.MaxValue; indice++)//buble casi infino empieza del 2 hasta el máximo de ULong
                 {
-                divisores = 1;                                  //se asigna 1 al primer divisor
-                for (ulong i = indice/2 ; i > 1 ; i--)          //i es la mitad del índice (para ahorrar vueltas) y se recorre del mayor hasta llegar a 2
-                {
-                    if (indice % i == 0) divisores += i;        //pregunta si el intento de número perfecto es dibicible por el actual índice (partiendo por intento más alto) de ser así se suma a la lista de divisores
-                    if (divisores > indice) break;              //si la actual suma de divisores supera al índice (número actual rompiendo la regla de los perfectos) se rompe la vuelta.
-                }
-                if (divisores == indice)                        //si la suma de divisores da el número, es perfecto
-                {
-                    Console.WriteLine($"Numero perfecto : {indice}  | Tiempo demorado en minutos: {tiempo.Elapsed.TotalMinutes}");
+                    divisores = 1;
+                    if (indice % 2 == 0)                            //Es par
+                    {
+                        for (ulong i = indice / 2; i > 1; i--)      //i es la mitad del índice (para ahorrar vueltas) y se recorre del mayor hasta llegar a 2
+                        {
+                            if (indice % i == 0) divisores += i;    //pregunta si el intento de número perfecto es dibicible por el actual índice (partiendo por intento más alto) de ser así se suma a la lista de divisores
+                            if (divisores > indice) break;
+                        }
+                    }
+                    else
+                    {
+                        for (ulong i = indice / 2; i > 1; i-=2)      //i es la mitad del índice (para ahorrar vueltas) y se recorre del mayor hasta llegar a 2
+                        {
+                            if (indice % i == 0) divisores += i;    //pregunta si el intento de número perfecto es dibicible por el actual índice (partiendo por intento más alto) de ser así se suma a la lista de divisores
+                            if (divisores > indice) break;
+                        }
+                    }
+                    if (divisores == indice)                        //si la suma de divisores da el número, es perfecto
+                    {
+                        Console.WriteLine($"Numero perfecto : {indice}  | Tiempo demorado en minutos: {tiempo.Elapsed.TotalMinutes}");
+                    }
                 }
             }
-        }
-        public static ulong NumerosPares(ulong indice, ulong divisores)
-        {
-            return divisores;
-        }
-
-        public static ulong NumerosPrimos(ulong indice, ulong divisores)
-        {
-            return divisores;
         }
     }
 }
