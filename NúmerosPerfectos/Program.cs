@@ -25,8 +25,8 @@ namespace NúmerosPerfectos
         static void Main(string[] args)
         {
             {
-                Thread calcularPrimos = new Thread(AcumuladorDePrimos);
-                calcularPrimos.Start();
+                //Thread calcularPrimos = new Thread(AcumuladorDePrimos);
+                //calcularPrimos.Start();
                 ulong indice;                                       //Intento de número perfecto.
                 ulong divisores;                                    //acumulador de divisores.
                 Console.WriteLine("calcuadora de números perfectos");
@@ -45,18 +45,18 @@ namespace NúmerosPerfectos
                     }
                     else                                            //es impar.
                     {
-                        //if (calcularPrimos(indice) == true)         //es primo
-                        //{
-                        //    divisores = divisores;
-                        //}
-                        //else                                       //no es primo
-                        //{
+                        if (esPrimo(indice) == true)                //es primo
+                        {
+                            divisores = divisores;
+                        }
+                        else                                        //no es primo
+                        {
                             for (ulong i = indice / 2; i > 1; i -= 2)//impares solo tienen divisores impares.
                             {
                                 if (indice % i == 0) divisores += i;
                                 if (divisores > indice) break;
                             }
-                        //}
+                        }
                     }
                     if (divisores == indice)                        //si la suma de divisores (exepto sumar el mísmo indice) da el mismo indice, es perfecto.
                     {
@@ -65,48 +65,13 @@ namespace NúmerosPerfectos
                 }
             }
         }
-        //public static bool calcularPrimos(ulong indice, List<ulong> acumulador)
-        //{
-        //    double decimalDos = Convert.ToDouble(indice);
-        //    bool resultado;
-        //    //2, 3, 5, 7, 11
-        //    if (indice == 2)                                       //2 es la única exepción de números pares primos
-        //    {
-        //        resultado = false;
-        //    }
-        //    else
-        //    {
-        //        double raizIndice = Math.Sqrt(Math.Truncate(decimalDos));
-        //        if ()
-        //        {
-        //            resultado = true;
-        //        }
-        //        else
-        //        {
-        //            resultado = false;                              //si una división fue exacta, el número ya no es primo
-        //        }
-
-        //    }
-        //    return resultado;
-        //}
-        public static void AcumuladorDePrimos()
+        public static bool esPrimo(ulong numero)                    //discrimina si es primo o no
         {
-            List<ulong> acumulador = new List<ulong>();
-            for (ulong i = 2; i <= ulong.MaxValue; i++)
-            {
-                if (esPrimo(i) == true)
-                {
-                    acumulador.Add(i);
-                    Console.WriteLine(i);
-                }
-            }
-            //return acumulador;
-        }
-        public static bool esPrimo(ulong numero)
-        {
+            double decimalDos = Convert.ToDouble(numero);
+            double raizIndice = Math.Sqrt(Math.Truncate(decimalDos));
             ulong divisor = 2;
             ulong resto = 0;
-            while (divisor < numero)
+            while (divisor < raizIndice)
             {
                 resto = numero % divisor;
                 if (resto == 0)
