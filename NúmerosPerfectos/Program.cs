@@ -11,11 +11,10 @@
  * -    Si la operación de suma de sus divisores se pasó del número, el número no es perfecto. Por lo que se puede comenzar la suma desde los últimos divisores                                         LISTO
  * -    Si el cuociente de la división es un número entero, se obtienen dos divisores, el divisor y el cuociente (resultado como número entero de la división)                                          PENDIENTE
  * -    Los números impares SOLO PUEDEN TENER DIVISORES IMPARES                                                                                                                                         LISTO
+ * -    Los números primos son divisibles sólo entre 1 y el mísmo número, lo que ahorra cómputo descubrirlos antes que todo...(si es par, ya no será primo (única exepción el 2))
  */
 using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Threading;
 
 namespace NúmerosPerfectos
 {
@@ -42,10 +41,17 @@ namespace NúmerosPerfectos
                     }
                     else                                            //es impar.
                     {
-                        for (ulong i = indice / 2; i > 1; i-=2)     //impares solo tienen divisores impares.
+                        if (calcularPrimos(indice) == true)         //es primo
                         {
-                            if (indice % i == 0) divisores += i;    
-                            if (divisores > indice) break;
+                            divisores = divisores;
+                        }
+                        else                                       //no es primo
+                        {
+                            for (ulong i = indice / 2; i > 1; i -= 2)//impares solo tienen divisores impares.
+                            {
+                                if (indice % i == 0) divisores += i;
+                                if (divisores > indice) break;
+                            }
                         }
                     }
                     if (divisores == indice)                        //si la suma de divisores (exepto sumar el mísmo indice) da el mismo indice, es perfecto.
@@ -55,7 +61,7 @@ namespace NúmerosPerfectos
                 }
             }
         }
-        public static void calcularPrimos(ulong indice)
+        public static bool calcularPrimos(ulong indice)
         {
             //2, 3, 5, 7, 11
             double raizIndice = Math.Sqrt(indice);
@@ -63,6 +69,7 @@ namespace NúmerosPerfectos
             {
 
             }
+            return false;
         }
     }
 }
