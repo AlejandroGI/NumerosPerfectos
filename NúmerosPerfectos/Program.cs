@@ -9,14 +9,11 @@
  * SUGERENCIAS DE OPTIMIZACIÓN:
  * -    Los divisores solo llegan hasta la mitad del número, ya que no cabe la mitad de un volumen en otro trozo un poco mayor a dicha mitad. (los divisores solo son hasta la mitád del número)        LISTO
  * -    Si la operación de suma de sus divisores se pasó del número, el número no es perfecto. Por lo que se puede comenzar la suma desde los últimos divisores                                         LISTO
- * -    Si el cuociente de la división es un número entero, se obtienen dos divisores, el divisor y el cuociente (resultado como número entero de la división)                                          PENDIENTE
  * -    Los números impares SOLO PUEDEN TENER DIVISORES IMPARES                                                                                                                                         LISTO
- * -    Los números primos son divisibles sólo entre 1 y el mísmo número, lo que ahorra cómputo descubrirlos antes que todo...(si es par, ya no será primo (única exepción el 2))
+ * -    Los números primos son divisibles sólo entre 1 y el mísmo número, lo que ahorra cómputo descubrirlos antes que todo...(si es par, ya no será primo (única exepción el 2))                       Listo
  */
 using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Threading;
 
 namespace NúmerosPerfectos
 {
@@ -47,6 +44,7 @@ namespace NúmerosPerfectos
                     {
                         if (esPrimo(indice) == true)                //es primo
                         {
+                            Console.WriteLine($"es primo  {tiempo.Elapsed.TotalMinutes}");
                             divisores = divisores;
                         }
                         else                                        //no es primo
@@ -67,11 +65,9 @@ namespace NúmerosPerfectos
         }
         public static bool esPrimo(ulong numero)                    //discrimina si es primo o no
         {
-            double decimalDos = Convert.ToDouble(numero);
-            double raizIndice = Math.Sqrt(Math.Truncate(decimalDos));
             ulong divisor = 2;
             ulong resto = 0;
-            while (divisor < raizIndice)
+            while (divisor < numero)
             {
                 resto = numero % divisor;
                 if (resto == 0)
